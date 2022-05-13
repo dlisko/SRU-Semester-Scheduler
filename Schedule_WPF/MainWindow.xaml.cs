@@ -8050,12 +8050,15 @@ namespace Schedule_WPF
                             {
                                 if (classList[i].StartTime.Meridian == targetTime.Meridian)
                                 {
-                                    isConflict = true;
-                                    if (classList[i].Online)
+                                    if (_class.ClassDay == "MWF" && classList[i].ClassDay == "MWF" || _class.ClassDay == "M" && classList[i].ClassDay == "MWF" || _class.ClassDay == "W" && classList[i].ClassDay == "MWF" || _class.ClassDay == "F" && classList[i].ClassDay == "MWF" || classList[i].ClassDay == "M" && _class.ClassDay == "MWF" || classList[i].ClassDay == "W" && _class.ClassDay == "MWF" || classList[i].ClassDay == "F" && _class.ClassDay == "MWF" || classList[i].ClassDay == "M" && _class.ClassDay == "M" || classList[i].ClassDay == "W" && _class.ClassDay == "W" || classList[i].ClassDay == "F" && _class.ClassDay == "F" || classList[i].ClassDay == "TR" && _class.ClassDay == "TR" || classList[i].ClassDay == "TR" && _class.ClassDay == "T" || classList[i].ClassDay == "TR" && _class.ClassDay == "R" || classList[i].ClassDay == "T" && _class.ClassDay == "TR" || classList[i].ClassDay == "R" && _class.ClassDay == "TR" || classList[i].ClassDay == "T" && _class.ClassDay == "T" || classList[i].ClassDay == "R" && _class.ClassDay == "R")
                                     {
-                                        System.Windows.MessageBox.Show("Professor is teaching an ONLINE class at that time...");
+                                        isConflict = true;
+                                        if (classList[i].Online)
+                                        {
+                                            System.Windows.MessageBox.Show("Professor is teaching an ONLINE class at that time...");
+                                        }
+                                        break;
                                     }
-                                    break;
                                 }
                             }
                         }
